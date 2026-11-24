@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luís Fernandes Saucedo Souza — Matemática Aplicada, IA &amp; Modelagem Computacional</title>
+  <meta name="description" content="Portfólio acadêmico e profissional de Luís Fernandes Saucedo Souza — Mestrando em Modelagem Matemática (PPGMMat / UFPel), Engenheiro de IA, Analista de BI e Pesquisador em PINNs, PySHRED, Deep Learning e Ciência de Dados.">
+  <meta property="og:title" content="Luís Fernandes Saucedo Souza — Portfólio">
+  <meta property="og:description" content="Matemática Aplicada, Modelagem Computacional, Scientific Machine Learning (PINNs, PySHRED, ANFIS, LSTM) e Ciência de Dados.">
+  <meta property="og:type" content="website">
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- KaTeX for authentic LaTeX (.tex) math rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="navbar" id="top">
+    <div class="container nav-inner">
+      <a href="#top" class="brand" aria-label="Início">
+        <span class="brand-mark">∫</span>
+        <span class="brand-name">Luís <span class="muted">Fernandes</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#sobre" data-i18n="nav_about">Sobre</a>
+        <a href="#projetos" data-i18n="nav_projects">Projetos</a>
+        <a href="#publicacoes" data-i18n="nav_publications">Publicações</a>
+        <a href="#stack" data-i18n="nav_stack">Stack &amp; Ensino</a>
+        <a href="#contato" data-i18n="nav_contact">Contato</a>
+      </nav>
+      <div class="nav-controls">
+        <button class="icon-btn" id="langToggle" title="Alternar idioma / Switch language" aria-label="Alternar idioma">EN</button>
+        <button class="icon-btn" id="themeToggle" title="Alternar tema" aria-label="Alternar tema">☀</button>
+        <button class="icon-btn mobile-menu-btn" id="menuToggle" aria-label="Abrir menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero with Monochrome Fluid Streamlines Canvas -->
+  <section class="hero">
+    <canvas id="fluidCanvas" aria-hidden="true"></canvas>
+    <div class="hero-vignette" aria-hidden="true"></div>
+    <div class="container hero-content">
+      <div class="hero-text">
+        <div class="eyebrow">
+          <span class="pulse-dot"></span>
+          <span data-i18n="hero_eyebrow">Mestrando em Modelagem Matemática (PPGMMat / UFPel · CAPES) · Engenheiro de IA &amp; BI</span>
+        </div>
+        <h1>
+          Luís Fernandes<br>
+          <span class="subtle-title">Saucedo Souza</span>
+        </h1>
+        <p class="hero-lead" data-i18n="hero_lead">
+          Unindo <strong>Matemática Aplicada</strong>, <strong>Scientific Machine Learning</strong> (PINNs, PySHRED, ANFIS, LSTM) e <strong>Engenharia de Dados em Nuvem</strong> para modelar fenômenos físicos complexos, séries temporais e problemas reais de decisão.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projetos" class="btn btn-primary" data-i18n="btn_projects">Explorar Projetos</a>
+          <a href="#publicacoes" class="btn btn-secondary" data-i18n="btn_publications">Ver Publicações</a>
+          <a href="https://github.com/luisin-py" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">GitHub ↗</a>
+          <a href="https://lattes.cnpq.br/1061621308809232" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Lattes ↗</a>
+        </div>
+
+        <div class="metrics-bar">
+          <div class="metric">
+            <span class="metric-value">4</span>
+            <span class="metric-label" data-i18n="metric_journals">Artigos em Periódicos</span>
+          </div>
+          <div class="metric">
+            <span class="metric-value">12</span>
+            <span class="metric-label" data-i18n="metric_proceedings">Trabalhos em Anais</span>
+          </div>
+          <div class="metric">
+            <span class="metric-value">17+</span>
+            <span class="metric-label" data-i18n="metric_repos">Repositórios Públicos</span>
+          </div>
+          <div class="metric">
+            <span class="metric-value">9</span>
+            <span class="metric-label" data-i18n="metric_courses">Minicursos Ministrados</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <div class="avatar-wrap">
+          <img src="https://avatars.githubusercontent.com/u/62587336?v=4" alt="Foto de Luís Fernandes Saucedo Souza" class="avatar" loading="eager">
+          <div>
+            <div class="avatar-name">Luís F. S. Souza</div>
+            <span class="status-pill">Pelotas / Rio Grande · RS</span>
+          </div>
+        </div>
+
+        <div class="card-equation">
+          <div class="tex-display">
+            $$\frac{\partial \mathbf{u}}{\partial t} + (\mathbf{u} \cdot \nabla)\mathbf{u} = -\frac{1}{\rho}\nabla p + \nu \nabla^2 \mathbf{u}$$
+          </div>
+          <span class="eq-caption" data-i18n="eq_caption">Equações de Navier–Stokes · PINNs &amp; PySHRED</span>
+        </div>
+
+        <div class="quick-links">
+          <a href="https://orcid.org/0009-0008-2704-347X" target="_blank" rel="noopener noreferrer" class="chip-link">
+            <span>ORCID</span>
+            <span class="mono">0009-0008-2704-347X</span>
+          </a>
+          <a href="https://www.linkedin.com/in/luis-fernandes-6161ba248" target="_blank" rel="noopener noreferrer" class="chip-link">
+            <span>LinkedIn</span>
+            <span class="mono">/in/luis-fernandes</span>
+          </a>
+          <a href="https://lattes.cnpq.br/1061621308809232" target="_blank" rel="noopener noreferrer" class="chip-link">
+            <span>Currículo Lattes</span>
+            <span class="mono">ID 1061621308809232</span>
+          </a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- About & Timeline -->
+  <section class="section" id="sobre">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">01 // PERFIL</span>
+        <h2 data-i18n="about_title">Trajetória Acadêmica &amp; Profissional</h2>
+        <p data-i18n="about_subtitle">
+          Base sólida em Matemática Aplicada conectada diretamente à pesquisa de fronteira em Deep Learning científico e soluções de dados em produção.
+        </p>
+      </div>
+
+      <div class="timeline-grid">
+        <div class="timeline-col">
+          <h3 class="col-title" data-i18n="col_academic">Formação &amp; Pesquisa</h3>
+
+          <article class="timeline-item">
+            <div class="timeline-meta">
+              <span class="badge badge-strong">2026 – Atual</span>
+              <span class="inst">UFPel · PPGMMat · CAPES</span>
+            </div>
+            <h4 data-i18n="acad_1_title">Mestrado em Modelagem Matemática (PPGMMat)</h4>
+            <p data-i18n="acad_1_desc">
+              Pesquisa em <strong>Redes Neurais Informadas por Física (PINNs)</strong>, <strong>PySHRED (Shallow Recurrent Decoders)</strong>, sistemas neuro-fuzzy (<strong>ANFIS</strong>) e redes recorrentes (<strong>LSTM</strong>) aplicados à modelagem hidrodinâmica (Lagoa dos Patos e Barra de Rio Grande) e equações diferenciais parciais. Orientador: Prof. Dr. Régis Sperotto de Quadros.
+            </p>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-meta">
+              <span class="badge">2020 – 2025</span>
+              <span class="inst">FURG · IMEF</span>
+            </div>
+            <h4 data-i18n="acad_2_title">Bacharelado em Matemática Aplicada</h4>
+            <p data-i18n="acad_2_desc">
+              TCC sobre <em>Redes Neurais Profundas e a Previsão de Preço de Ativos Financeiros</em>. Bolsista PIBIC/PIBITI CNPq (2022–2024) e Voluntário de Pesquisa (2024–2026) no Laboratório de Matemática Aplicada e Computacional; Monitor de Cálculo e Álgebra Linear no Projeto TEMAT (480h). <strong>Prêmio Destaque em Ciências Exatas e da Terra</strong> na 22ª MPU / 32º CIC (2023).
+            </p>
+          </article>
+        </div>
+
+        <div class="timeline-col">
+          <h3 class="col-title" data-i18n="col_industry">Engenharia de IA &amp; Dados</h3>
+
+          <article class="timeline-item">
+            <div class="timeline-meta">
+              <span class="badge badge-strong">01/2026 – Atual</span>
+              <span class="inst">Pegoraro Consultoria</span>
+            </div>
+            <h4 data-i18n="ind_1_title">Engenheiro de IA &amp; Analista de Business Intelligence</h4>
+            <p data-i18n="ind_1_desc">
+              Arquitetura de pipelines analíticos em nuvem (<strong>Google BigQuery / SQL</strong>), modelos preditivos de séries temporais, <strong>Marketing Mix Modeling (MMM com Robyn &amp; PyMC)</strong>, Machine Learning (LSTM, LightGBM) e dashboards executivos em Looker Studio e Python.
+            </p>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-meta">
+              <span class="badge">03/2025 – 12/2025</span>
+              <span class="inst">ArqExpress</span>
+            </div>
+            <h4 data-i18n="ind_2_title">Desenvolvedor Full-Stack com IA &amp; Automação</h4>
+            <p data-i18n="ind_2_desc">
+              Desenvolvimento ponta a ponta de aplicações web e fluxos inteligentes com IA, integrando front-end (<strong>TypeScript, HTML/CSS</strong>), back-end (<strong>Python</strong>) e banco de dados relacional (<strong>PostgreSQL</strong>).
+            </p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="section section-alt" id="projetos">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">02 // PROJETOS</span>
+        <h2 data-i18n="projects_title">Projetos em Destaque</h2>
+        <p data-i18n="projects_subtitle">
+          Repositórios selecionados de modelagem físico-matemática, Deep Learning, engenharia de dados e simuladores interativos.
+        </p>
+      </div>
+
+      <div class="filter-bar" role="tablist" aria-label="Filtrar projetos por área">
+        <button class="filter-btn active" data-filter="all" data-i18n="filter_all">Todos</button>
+        <button class="filter-btn" data-filter="sciml" data-i18n="filter_sciml">SciML &amp; Hidrodinâmica</button>
+        <button class="filter-btn" data-filter="ai" data-i18n="filter_ai">Deep Learning &amp; IA</button>
+        <button class="filter-btn" data-filter="finance" data-i18n="filter_finance">Dados &amp; Finanças</button>
+        <button class="filter-btn" data-filter="sim" data-i18n="filter_sim">Simuladores &amp; Ensino</button>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+        <!-- Project 1 -->
+        <article class="project-card featured" data-tags="sciml ai">
+          <div class="project-top">
+            <span class="project-category">Dissertação · PPGMMat · SciML</span>
+            <span class="project-year">2026</span>
+          </div>
+          <h3>PySHRED — Reconstrução de Correntes 2D na Lagoa dos Patos</h3>
+          <p>
+            Pipeline fim-a-fim com <strong>Shallow Recurrent Decoders (SHRED)</strong> para reconstruir campos vetoriais 2D de correntes hidrodinâmicas a partir de sensores meteorológicos esparsos (9 cidades + maré de Rio Grande), integrado ao Google BigQuery e surrogate físico-guiado.
+          </p>
+          <div class="project-formula">
+            $$\hat{\mathbf{x}}(t) = \mathcal{D}_{\theta}\!\left(\mathcal{G}_{\phi}\!\left(\mathbf{y}_{t-k:t}\right)\right)$$
+          </div>
+          <div class="tech-list">
+            <span>Python</span><span>PyTorch</span><span>PySHRED</span><span>BigQuery</span><span>Hidrodinâmica</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/luisin-py/pyshred_lagoa_dos_patos" target="_blank" rel="noopener noreferrer" class="link-btn">Repositório GitHub ↗</a>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card featured" data-tags="sciml ai">
+          <div class="project-top">
+            <span class="project-category">Produção · Séries Temporais</span>
+            <span class="project-year">2026</span>
+          </div>
+          <h3>Modelo de Previsão de Correnteza V7 — Porto de Rio Grande</h3>
+          <p>
+            Sistema operacional de previsão de intensidade de correntes de superfície em horizontes de <strong>+1h a +6h</strong> utilizando mecânica de <em>Leads Meteorológicos</em> (12h à frente), redes recorrentes LSTM, LightGBM e função de perda DILATE para mitigação de atraso temporal.
+          </p>
+          <div class="project-formula">
+            $$\mathcal{L}_{\text{DILATE}}(\hat{\mathbf{y}}, \mathbf{y}) = \alpha\,\mathcal{L}_{\text{shape}}(\hat{\mathbf{y}}, \mathbf{y}) + (1 - \alpha)\,\mathcal{L}_{\text{temporal}}(\hat{\mathbf{y}}, \mathbf{y})$$
+          </div>
+          <div class="tech-list">
+            <span>Python</span><span>LSTM</span><span>PINNs</span><span>LightGBM</span><span>Cloud Serverless</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/luisin-py/prev_correnteza" target="_blank" rel="noopener noreferrer" class="link-btn">Repositório GitHub ↗</a>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card" data-tags="sciml ai">
+          <div class="project-top">
+            <span class="project-category">ROM-SVD + Deep Learning</span>
+            <span class="project-year">2026</span>
+          </div>
+          <h3>Previsão Espaço-Temporal &amp; Alocação de Frota (Pelotas/RS)</h3>
+          <p>
+            Engenharia de dados geoespaciais com malha hexagonal <strong>Uber H3</strong>, modelagem matemática de ordem reduzida (<strong>ROM via SVD</strong>) acoplada a redes <strong>PyTorch LSTM</strong> e otimização dinâmica de frota com visualização interativa.
+          </p>
+          <div class="project-formula">
+            $$\mathbf{X} \approx \mathbf{U}_r \mathbf{\Sigma}_r \mathbf{V}_r^{\top}, \quad \mathbf{a}_{t+1} = f_{\text{LSTM}}(\mathbf{a}_{t-k:t})$$
+          </div>
+          <div class="tech-list">
+            <span>PyTorch LSTM</span><span>ROM / SVD</span><span>Uber H3</span><span>FastAPI</span><span>MLOps</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/luisin-py/ifood-pelotas-spatiotemporal" target="_blank" rel="noopener noreferrer" class="link-btn">Repositório GitHub ↗</a>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project-card" data-tags="sciml sim">
+          <div class="project-top">
+            <span class="project-category">Simulador Live · PPGMMat / UFPel</span>
+            <span class="project-year">2026</span>
+          </div>
+          <h3>Simuladores Interativos de Mecânica dos Fluidos (Navier–Stokes)</h3>
+          <p>
+            Simuladores interativos em <strong>HTML5 Canvas</strong> e notebooks computacionais para soluções exatas das equações de Navier–Stokes (escoamento de Couette–Poiseuille entre placas inclinadas), análise tensorial e cinemática dos fluidos.
+          </p>
+          <div class="project-formula">
+            $$u(y) = \frac{U}{2}\!\left(1 + \frac{y}{a}\right) - \frac{a^2}{2\mu}\left(\frac{\partial p}{\partial x} - \rho g \sin\theta\right)\!\left(1 - \frac{y^2}{a^2}\right)$$
+          </div>
+          <div class="tech-list">
+            <span>HTML5 Canvas</span><span>Navier-Stokes</span><span>Jupyter</span><span>SymPy</span>
+          </div>
+          <div class="project-links">
+            <a href="https://luisin-py.github.io/mecanica-dos-fluidos/" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-primary">Abrir Simulador Live ↗</a>
+            <a href="https://github.com/luisin-py/mecanica-dos-fluidos" target="_blank" rel="noopener noreferrer" class="link-btn">Código ↗</a>
+          </div>
+        </article>
+
+        <!-- Project 5 -->
+        <article class="project-card" data-tags="finance">
+          <div class="project-top">
+            <span class="project-category">Engenharia de Dados · B3</span>
+            <span class="project-year">2025</span>
+          </div>
+          <h3>ETL Finance Dashboard — Mercado Brasileiro (B3)</h3>
+          <p>
+            Pipeline ETL automatizado em Python com ingestão via <code>yfinance</code>, persistência local em SQLite e dashboard interativo em <strong>Streamlit + Plotly</strong> para análise de ativos brasileiros (candlesticks, volume e filtros dinâmicos).
+          </p>
+          <div class="tech-list">
+            <span>Python</span><span>ETL</span><span>SQLite</span><span>Streamlit</span><span>Plotly</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/luisin-py/ETL-FINANCE" target="_blank" rel="noopener noreferrer" class="link-btn">Repositório GitHub ↗</a>
+          </div>
+        </article>
+
+        <!-- Project 6 -->
+        <article class="project-card" data-tags="ai sim">
+          <div class="project-top">
+            <span class="project-category">IA Generativa · Ferramenta Acadêmica</span>
+            <span class="project-year">2024</span>
+          </div>
+          <h3>Conversor de Imagens Matemáticas para LaTeX (<code>.tex</code>)</h3>
+          <p>
+            Ferramenta em Python integrada à API do <strong>Google Generative AI</strong> que lê imagens de equações, teoremas e notas manuscritas e converte automaticamente em código <strong>LaTeX</strong> pronto para artigos e dissertações.
+          </p>
+          <div class="tech-list">
+            <span>Python</span><span>Gemini API</span><span>LaTeX</span><span>Computer Vision</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/luisin-py/Conversor-imagens-para-.tex" target="_blank" rel="noopener noreferrer" class="link-btn">Repositório GitHub ↗</a>
+          </div>
+        </article>
+
+        <!-- Project 7 -->
+        <article class="project-card" data-tags="finance ai">
+          <div class="project-top">
+            <span class="project-category">PIBIC CNPq · Otimização &amp; EDOs</span>
+            <span class="project-year">2023–2025</span>
+          </div>
+          <h3>Coleção Lab. IPython FURG — Redes Neurais, EDOs &amp; Finanças</h3>
+          <p>
+            Mais de 11 notebooks aplicados desenvolvidos na FURG: resolução de EDOs via redes neurais (Lagaris), CNN-LSTM/MLP para ações da B3, Método Simplex &amp; Fronteira de Markowitz, Cadeias de Markov, Matriz de Leontief e viabilidade imobiliária (Prêmio Destaque MPU).
+          </p>
+          <div class="project-formula">
+            $$\min_{\mathbf{w} \in \mathbb{R}^n}\; \mathbf{w}^{\top}\mathbf{\Sigma}\mathbf{w} \quad \text{s.a.} \quad \mathbf{w}^{\top}\boldsymbol{\mu} \ge r_0,\;\; \sum_{i=1}^{n} w_i = 1$$
+          </div>
+          <div class="tech-list">
+            <span>PyTorch</span><span>SymPy</span><span>SciPy</span><span>Pandas</span><span>Otimização Linear</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/luisin-py/Estudos-redes-neurais" target="_blank" rel="noopener noreferrer" class="link-btn">Redes Neurais ↗</a>
+            <a href="https://github.com/luisin-py/Aquisicao_Imovel" target="_blank" rel="noopener noreferrer" class="link-btn">Finanças ↗</a>
+          </div>
+        </article>
+
+        <!-- Project 8 -->
+        <article class="project-card" data-tags="sim">
+          <div class="project-top">
+            <span class="project-category">Extensão &amp; Ensino · TEMAT</span>
+            <span class="project-year">2024–2025</span>
+          </div>
+          <h3>Oficinas TEMAT — Cálculo e Álgebra Linear em Python</h3>
+          <p>
+            Série de 9 oficinas e minicursos presenciais/online ministrados na FURG com notebooks didáticos abertos cobrindo Pré-Cálculo, Limites, Derivadas, Integrais, EDOs, Geometria Analítica e Álgebra Linear via Python, NumPy, SymPy e Matplotlib.
+          </p>
+          <div class="tech-list">
+            <span>Python</span><span>NumPy</span><span>SymPy</span><span>Matplotlib</span><span>Google Colab</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/luisin-py/calculo_diferencial" target="_blank" rel="noopener noreferrer" class="link-btn">Cálculo Diferencial ↗</a>
+            <a href="https://github.com/luisin-py/Lucro_marginal" target="_blank" rel="noopener noreferrer" class="link-btn">Lucro Marginal ↗</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Publications Section -->
+  <section class="section" id="publicacoes">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">03 // PRODUÇÃO CIENTÍFICA</span>
+        <h2 data-i18n="pub_title">Publicações &amp; Congressos</h2>
+        <p data-i18n="pub_subtitle">
+          Artigos publicados em periódicos revisados por pares e trabalhos completos em congressos nacionais de Modelagem Computacional e Matemática Aplicada.
+        </p>
+      </div>
+
+      <div class="tabs" role="tablist">
+        <button class="tab-btn active" data-tab="journals" data-i18n="tab_journals">Periódicos (4)</button>
+        <button class="tab-btn" data-tab="enmc" data-i18n="tab_enmc">XXIX ENMC 2026 (4)</button>
+        <button class="tab-btn" data-tab="conferences" data-i18n="tab_conf">CNMAC, ERMAC &amp; SBM</button>
+      </div>
+
+      <!-- Tab 1: Journals -->
+      <div class="pub-list active" id="tab-journals">
+        <article class="pub-item">
+          <div class="pub-year">2025</div>
+          <div class="pub-body">
+            <h4>Equações diferenciais para acadêmicos do curso de Matemática Aplicada por meio da linguagem Python e do Google Colab</h4>
+            <p class="pub-authors">B. D. A. Rodriguez, <strong>L. F. S. Souza</strong>, C. A. Poffal</p>
+            <p class="pub-venue">Revista Mundi Engenharia, Tecnologia e Gestão · v. 10, p. 1–15</p>
+            <div class="pub-actions">
+              <a href="https://dx.doi.org/10.21575/25254782rmetg2025vol10n42463" target="_blank" rel="noopener noreferrer">DOI: 10.21575/25254782rmetg2025vol10n42463 ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pub-item">
+          <div class="pub-year">2025</div>
+          <div class="pub-body">
+            <h4>Previsão de Preços de Ações no Mercado Brasileiro com Modelos Híbridos CNN-LSTM</h4>
+            <p class="pub-authors"><strong>L. F. S. Souza</strong>, B. D. A. Rodriguez, C. A. Poffal</p>
+            <p class="pub-venue">Revista Junior de Iniciação Científica em Ciências Exatas e Engenharia (ICCEEg) · v. 1, p. 17–26</p>
+            <div class="pub-actions">
+              <a href="https://sma.c3.furg.br/icceeg/index.php/ICCEEg/article/view/41" target="_blank" rel="noopener noreferrer">Acessar Artigo ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pub-item">
+          <div class="pub-year">2024</div>
+          <div class="pub-body">
+            <h4>Linguagem Python e Jupyter Notebook: uma proposta didática a fim de determinar o preço adequado à venda utilizando conceitos de Álgebra Linear, Cálculo Diferencial e Métodos Numéricos</h4>
+            <p class="pub-authors"><strong>L. F. S. Souza</strong>, B. D. A. Rodriguez, C. A. Poffal</p>
+            <p class="pub-venue">Revista Interdisciplinar de Pesquisa em Engenharia (RIPE / UnB) · v. 9, p. 66–74</p>
+            <div class="pub-actions">
+              <a href="https://periodicos.unb.br/index.php/ripe/article/view/52305/39401" target="_blank" rel="noopener noreferrer">Acessar PDF ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pub-item">
+          <div class="pub-year">2024</div>
+          <div class="pub-body">
+            <h4>Otimização de Carteiras de Investimento: integrando Teoria de Markowitz, Análise Estatística e Método Simplex</h4>
+            <p class="pub-authors"><strong>L. F. S. Souza</strong>, L. A. Oliveira, B. D. A. Rodriguez, C. A. Poffal</p>
+            <p class="pub-venue">Revista Junior de Iniciação Científica em Ciências Exatas e Engenharia (ICCEEg) · v. 2, p. 1–9</p>
+            <div class="pub-actions">
+              <a href="https://sma.c3.furg.br/icceeg/index.php/ICCEEg/article/view/14" target="_blank" rel="noopener noreferrer">Acessar Artigo ↗</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Tab 2: ENMC 2026 -->
+      <div class="pub-list" id="tab-enmc">
+        <article class="pub-item">
+          <div class="pub-year">2026</div>
+          <div class="pub-body">
+            <h4>Hydrodynamic Current Modeling via Navier-Stokes PINN Framework and Evaluation of the DILATE Loss Function for Temporal Lag Mitigation</h4>
+            <p class="pub-authors"><strong>L. F. S. Souza</strong>, D. S. Silva, R. S. Quadros, K. Pegoraro</p>
+            <p class="pub-venue">XXIX Encontro Nacional de Modelagem Computacional (ENMC) &amp; XVII ECTM · Bento Gonçalves, RS · Artigo Completo (Matemática Aplicada)</p>
+          </div>
+        </article>
+
+        <article class="pub-item">
+          <div class="pub-year">2026</div>
+          <div class="pub-body">
+            <h4>Previsão de Correntes Hidrodinâmicas Multi-Profundidade na Barra de Rio Grande via Redes Recorrentes LSTM e Estratégia Delta em Nuvem Serverless</h4>
+            <p class="pub-authors"><strong>L. F. S. Souza</strong>, R. S. Quadros, K. Pegoraro</p>
+            <p class="pub-venue">XXIX Encontro Nacional de Modelagem Computacional (ENMC) &amp; XVII ECTM · Bento Gonçalves, RS · Artigo Completo (Computação de Alto Desempenho)</p>
+          </div>
+        </article>
+
+        <article class="pub-item">
+          <div class="pub-year">2026</div>
+          <div class="pub-body">
+            <h4>Solution of the 2D Laplace Equation for the Formation of Biological Protrusions via a Sequential PINN-ANFIS Structure</h4>
+            <p class="pub-authors">D. S. Silva, <strong>L. F. S. Souza</strong>, L. B. D. Soares, R. S. Quadros, D. Buske</p>
+            <p class="pub-venue">XXIX Encontro Nacional de Modelagem Computacional (ENMC) &amp; XVII ECTM · Bento Gonçalves, RS · Artigo Completo (Matemática Aplicada)</p>
+          </div>
+        </article>
+
+        <article class="pub-item">
+          <div class="pub-year">2026</div>
+          <div class="pub-body">
+            <h4>Modeling Escherichia coli Bacterial Growth Dynamics: A Comparative Study of ANFIS and Analytical Population Models Using the Keio Collection Dataset</h4>
+            <p class="pub-authors">D. S. Silva, <strong>L. F. S. Souza</strong>, R. S. Quadros, D. Buske</p>
+            <p class="pub-venue">XXIX Encontro Nacional de Modelagem Computacional (ENMC) &amp; XVII ECTM · Bento Gonçalves, RS · Artigo Completo (Matemática Aplicada)</p>
+          </div>
+        </article>
+      </div>
+
+      <!-- Tab 3: CNMAC / ERMAC / SBM -->
+      <div class="pub-list" id="tab-conferences">
+        <article class="pub-item">
+          <div class="pub-year">2026</div>
+          <div class="pub-body">
+            <h4>Fronteira Eficiente de Markowitz com Simulação de Monte Carlo em Python</h4>
+            <p class="pub-authors"><strong>L. F. S. Souza</strong>, R. S. Quadros, B. D. A. Rodriguez, C. A. Poffal, A. S. Nunes</p>
+            <p class="pub-venue">XLV Congresso Nacional de Matemática Aplicada e Computacional (CNMAC) · Presidente Prudente, SP · Proceeding Series of the SBMAC</p>
+          </div>
+        </article>
+
+        <article class="pub-item">
+          <div class="pub-year">2025</div>
+          <div class="pub-body">
+            <h4>Redes Neurais Multi Layer Perceptron Aplicadas a Previsão dos Preços de Ações</h4>
+            <p class="pub-authors"><strong>L. F. S. Souza</strong>, B. D. A. Rodriguez, C. A. Poffal</p>
+            <p class="pub-venue">XLIV Congresso Nacional de Matemática Aplicada e Computacional (CNMAC) · FGV, Rio de Janeiro, RJ · Proceeding Series of the SBMAC</p>
+          </div>
+        </article>
+
+        <article class="pub-item">
+          <div class="pub-year">2025</div>
+          <div class="pub-body">
+            <h4>Redes Neurais Recorrentes Long Short-Term Memory (LSTM) Aplicadas a Previsão de Ações</h4>
+            <p class="pub-authors"><strong>L. F. S. Souza</strong>, B. D. A. Rodriguez, C. A. Poffal</p>
+            <p class="pub-venue">XII Encontro Regional de Matemática Aplicada e Computacional do RS (XII ERMAC-RS) · UFRGS, Porto Alegre, RS</p>
+          </div>
+        </article>
+
+        <article class="pub-item">
+          <div class="pub-year">2024</div>
+          <div class="pub-body">
+            <h4>Python e SymPy na resolução de equações diferenciais aplicadas a investimentos imobiliários</h4>
+            <p class="pub-authors"><strong>L. F. S. Souza</strong>, B. D. A. Rodriguez, C. A. Poffal</p>
+            <p class="pub-venue">XI Bienal de Matemática da Sociedade Brasileira de Matemática (SBM) · UFSCar, São Carlos, SP · p. 233–235</p>
+          </div>
+        </article>
+
+        <article class="pub-item">
+          <div class="pub-year">2023</div>
+          <div class="pub-body">
+            <h4>Linguagem Python e Jupyter Notebook: uma proposta didática a fim de determinar o preço adequado à venda</h4>
+            <p class="pub-authors"><strong>L. F. S. Souza</strong>, B. D. A. Rodriguez, C. A. Poffal</p>
+            <p class="pub-venue">XI Encontro Regional de Matemática Aplicada e Computacional do RS (XI ERMAC-RS) · UFPel, Pelotas, RS</p>
+            <div class="pub-actions">
+              <a href="https://dx.doi.org/10.29327/1313161.11-3" target="_blank" rel="noopener noreferrer">DOI: 10.29327/1313161.11-3 ↗</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack & Awards -->
+  <section class="section section-alt" id="stack">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">04 // COMPETÊNCIAS</span>
+        <h2 data-i18n="stack_title">Stack Técnico, Ensino &amp; Reconhecimentos</h2>
+      </div>
+
+      <div class="stack-grid">
+        <div class="stack-card">
+          <h3>Scientific ML &amp; IA</h3>
+          <div class="pill-wrap">
+            <span>PyTorch</span><span>PINNs</span><span>PySHRED</span><span>ANFIS</span><span>LSTM / CNN / MLP</span><span>LightGBM</span><span>Scikit-learn</span><span>PyMC</span><span>Robyn (MMM)</span>
+          </div>
+        </div>
+        <div class="stack-card">
+          <h3>Computação Científica</h3>
+          <div class="pill-wrap">
+            <span>Python</span><span>R</span><span>C++</span><span>MATLAB</span><span>NumPy</span><span>SciPy</span><span>SymPy</span><span>ROM / SVD</span><span>LaTeX / Overleaf</span>
+          </div>
+        </div>
+        <div class="stack-card">
+          <h3>Dados, BI &amp; Cloud</h3>
+          <div class="pill-wrap">
+            <span>Google BigQuery</span><span>SQL</span><span>PostgreSQL</span><span>Pandas</span><span>Looker Studio</span><span>Streamlit</span><span>Plotly</span><span>Uber H3</span><span>KNIME</span>
+          </div>
+        </div>
+        <div class="stack-card">
+          <h3>Engenharia &amp; Web</h3>
+          <div class="pill-wrap">
+            <span>TypeScript</span><span>HTML5 / CSS3</span><span>FastAPI</span><span>Git / GitHub</span><span>Docker</span><span>Serverless Cloud</span><span>Automação com IA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-banner">
+        <div class="highlight-item">
+          <span class="hl-num">01</span>
+          <div>
+            <strong>Destaque em Ciências Exatas e da Terra (2023)</strong>
+            <p>32º Congresso de Iniciação Científica / 22ª Mostra da Produção Universitária (FURG).</p>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <span class="hl-num">02</span>
+          <div>
+            <strong>Programa de Verão em Matemática — ICMC-USP (2024)</strong>
+            <p>122 horas (100% frequência) em Cálculo Avançado e Equações Diferenciais com Retardamento, São Carlos - SP.</p>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <span class="hl-num">03</span>
+          <div>
+            <strong>9 Minicursos &amp; Oficinas Ministrados (FURG / TEMAT)</strong>
+            <p>Ensino de Pré-Cálculo, Cálculo, Geometria Analítica, Álgebra Linear e Matemática Financeira com Python.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section" id="contato">
+    <div class="container">
+      <div class="contact-box">
+        <span class="section-tag">05 // CONTATO</span>
+        <h2 data-i18n="contact_title">Vamos conversar sobre pesquisa, IA ou projetos?</h2>
+        <p data-i18n="contact_subtitle">
+          Aberto a colaborações acadêmicas em Modelagem Computacional / Scientific ML e projetos desafiadores em Inteligência Artificial e Engenharia de Dados.
+        </p>
+
+        <div class="contact-actions">
+          <a href="mailto:luisfernandessaucedosouza4@gmail.com" class="btn btn-primary">Enviar E-mail</a>
+          <button type="button" class="btn btn-secondary" id="copyEmailBtn">Copiar E-mail</button>
+        </div>
+
+        <div class="social-row">
+          <a href="https://github.com/luisin-py" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/luis-fernandes-6161ba248" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://lattes.cnpq.br/1061621308809232" target="_blank" rel="noopener noreferrer">Currículo Lattes</a>
+          <a href="https://orcid.org/0009-0008-2704-347X" target="_blank" rel="noopener noreferrer">ORCID</a>
+          <a href="https://www.instagram.com/luisin.png" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Luís Fernandes Saucedo Souza · Pelotas &amp; Rio Grande, RS — Brasil</p>
+      <p class="mono">PPGMMat / UFPel · Typeset with KaTeX</p>
+    </div>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
